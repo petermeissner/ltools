@@ -103,12 +103,12 @@ sudo apt-get install texlive-lang-german -y
 sudo apt-get install texlive-lang-english -y
 
 # Latex / R
-sudo apt-get install texinfo
-sudo apt-get install texlive-fonts-extra
+sudo apt-get install texinfo -y
+sudo apt-get install texlive-fonts-extra -y
 
 
 # image processing
-sudo apt-get install imagemagick
+sudo apt-get install imagemagick -y
 
 
 # pgadmin
@@ -118,7 +118,7 @@ while true; do
     read -p "Do you wish to install postgresql database?" yn
     case $yn in
         [Yy]* ) 
-					sudo apt-get install postgresql; break;		
+					sudo apt-get install postgresql -y; break;		
 				;;
         [Nn]* ) 
 					echo "ok, no install ..."; break;
@@ -148,36 +148,9 @@ done
 
 
 # font
-# wget https://github.com/chrissimpkins/Hack/releases/download/v2.019/Hack-v2_019-ttf.zip
-
-
-# nautilus right click open in terminal
-while true; do
-    read -p "Do you wish to install pgadmin for postgresql database administration?" yn
-    case $yn in
-        [Yy]* ) 
-					sudo apt-get install nautilus-open-terminal;
-					break;		
-				;;
-        [Nn]* ) 
-					echo "ok, no install ..."; break;
-				;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-
-
-
-
-
-
-
-
-
-
-
-
+sudo apt-get install fonts-hack-otf -y
+sudo apt-get install fonts-hack-ttf -y
+sudo apt-get install fonts-hack-web -y
 
 
 
