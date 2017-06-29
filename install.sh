@@ -72,7 +72,7 @@ Rscript -e 'install.packages("htmltools",      repos="https://cloud.r-project.or
 Rscript -e 'install.packages("caTools",      repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("knitr",      repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("rmarkdown",      repos="https://cloud.r-project.org/")'
-
+Rscript -e 'install.packages("rdrop2",      repos="https://cloud.r-project.org/")'
 
 
 # Rstudio installation
