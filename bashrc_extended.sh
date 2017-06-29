@@ -5,16 +5,29 @@ if hash Rscript 2>/dev/null; then
 	then
 		xmodmap -e 'keycode 166=Home';
 		xmodmap -e 'keycode 167=End';
-	fi 
+	fi
 fi
 
 #### set up prompt #############################################################
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\]\n'
+
+source ~/.git-completion.bash
+source ~/.git-prompt.bash
+
+GIT_PS1_SHOWCOLORHINTS=true
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_DESCRIBE_STYLE="describe"
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git_ps1 "(%s)")\[\033[01;34m\] \w \$\[\033[00m\]\n'
+
+
+
+
 
 
 #### aliases ###################################################################
 alias R='R --no-save'
 alias cd..='cd ..'
+
+
 
 
 #### terminal convenience ######################################################
@@ -25,31 +38,30 @@ function minimalprompt(){
 
 
 
-#### nginx / server functions #################################################
-
-function nginxsta(){
-	/etc/init.d/nginx status
-}
 
 #### system functions ##########################################################
 
 function running(){
-	ps -ax | grep $1 
+	ps -ax | grep $1
 }
 
-
-#### lazy functions ############################################################
-
-# reload bashrc 
+# reload bashrc
 function reloadbashrc(){
 	source ~/.bashrc
 }
+
+
+
+
+#### GIT  ######################################################################
+
+
 
 # lazygit function
 function lazygit() {
     git add -A
     if [ -n "$1" ]
-    then 
+    then
         git commit -m "$1"
     else
         git commit -m "--"
@@ -57,9 +69,16 @@ function lazygit() {
     git push
 }
 
+
+# git status
 function gits(){
 	git status
 }
+
+
+
+
+#### lazy apt ##################################################################
 
 # lazy installation function
 function aptinstall() {

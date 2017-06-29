@@ -147,10 +147,56 @@ while true; do
 done
 
 
-# font
+
+
+#### font ######################################################################
+
 sudo apt-get install fonts-hack-otf -y
 sudo apt-get install fonts-hack-ttf -y
 sudo apt-get install fonts-hack-web -y
+
+
+
+
+#### git #######################################################################
+
+# autocompletion 
+
+wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
+
+
+# prompt 
+
+wget -O ~/.git-prompt.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+
+
+# colors
+
+cp ~/ltools/.gitconfig ~/
+
+
+# configs 
+
+git config --global push.default matching
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
