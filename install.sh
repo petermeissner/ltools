@@ -183,6 +183,17 @@ git config --global push.default matching
 
 
 
+#### mint ######################################################################
+
+gsettings set org.cinnamon.desktop.keybindings.wm toggle-recording ['']
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-down ['']
+gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up ['']
+
+
+
+
+
+
 
 
 
