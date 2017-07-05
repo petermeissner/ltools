@@ -72,10 +72,15 @@ function lazygit() {
 
 # git status
 function gits(){
+	git branch
+	echo -e "\e[93m$(git describe)\e[0m\n"
 	git status
 }
 
-
+# git log 
+function gitl(){
+	git log --pretty=format:"%h%x09%an%x09%ad%x09%s" --date=short
+}
 
 
 #### lazy apt ##################################################################
