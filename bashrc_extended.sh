@@ -10,8 +10,15 @@ fi
 
 #### set up prompt #############################################################
 
+# wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completions.bash"
 source ~/.git-completion.bash
+
+
+# wget -O ~/.git-prompt.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
 source ~/.git-prompt.bash
+
+
+
 
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
