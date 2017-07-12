@@ -34,7 +34,8 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git
 alias R='R --no-save'
 alias cd..='cd ..'
 
-
+alias ll='ls -l'
+alias lla='ls -la'
 
 
 #### terminal convenience ######################################################
