@@ -23,7 +23,7 @@ source ~/.git-prompt.bash
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_DESCRIBE_STYLE="describe"
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git_ps1 "(%s)")\[\033[01;34m\] \w \$\[\033[00m\]\n'
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git_ps1 "(%s)")\[\033[01;34m\] \w \$\[\033[00m\]\r\n'
 
 
 
@@ -34,8 +34,8 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git
 alias R='R --no-save'
 alias cd..='cd ..'
 
-alias ll='ls -l'
-alias lla='ls -la'
+alias ll='ls -lh'
+alias lla='ls -lah'
 
 
 #### terminal convenience ######################################################
@@ -63,7 +63,10 @@ function reloadbashrc(){
 
 #### GIT  ######################################################################
 
-
+# lazygittag function
+function lazygittag() {
+	git tag "snap-$(date +%Y-%m-%d)" -m "lazy snapshot"
+}
 
 # lazygit function
 function lazygit() {
@@ -72,10 +75,11 @@ function lazygit() {
     then
         git commit -m "$1"
     else
-        git commit -m "--"
+        git commit -m "+  snap-$(date +%Y-%m-%d)"
     fi
     git push
 }
+
 
 
 # git status
@@ -94,12 +98,12 @@ function gitl(){
 #### lazy apt ##################################################################
 
 # lazy installation function
-function aptinstall() {
+function apt-ins() {
 	sudo apt-get install $1
 }
 
 # lazy apt search function
-function aptsearch(){
+function apt-search(){
 	apt-cache search $1
 }
 

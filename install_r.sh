@@ -1,3 +1,5 @@
+#!bash
+
 # helper functions
 function echo_headline(){ echo -e "\033[1;36m$1\033[0m"; }
 
@@ -38,7 +40,7 @@ sudo chmod o+w /usr/local/lib/R/site-library
 
 
 # R package installation
-# do the first by hand to make sure user library is create 
+# do the first by hand to make sure user library is create
 echo_headline R packages
 
 
@@ -73,3 +75,6 @@ Rscript -e 'install.packages("caTools",      repos="https://cloud.r-project.org/
 Rscript -e 'install.packages("knitr",      repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("rmarkdown",      repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("rdrop2",      repos="https://cloud.r-project.org/")'
+
+
+
