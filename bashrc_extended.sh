@@ -114,6 +114,31 @@ function debug_c(){
 
 
 
+#### file watching ############################################################
+
+function watch_file (){
+
+### Set initial time of file
+LTIME=`stat -c %Z $1`
+printf "\033c"
+echo -e "watching: $1 ---- $(date '+%Y-%m-%d %H:%M:%S')\n-------------------------------------------\n"
+${@:2}
+
+while true
+do
+   ATIME=`stat -c %Z $1`
+
+   if [[ "$ATIME" != "$LTIME" ]]
+   then
+	printf "\033c"
+	echo -e "watching: $1 ---- $(date '+%Y-%m-%d %H:%M:%S')\n-------------------------------------------\n"
+	${@:2}
+	LTIME=$ATIME
+   fi
+   sleep 1
+done
+}
+
 #### adding scripts to path ####################################################
 
 export PATH=$PATH:~/ltools/scripts
