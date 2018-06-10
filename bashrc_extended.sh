@@ -89,7 +89,7 @@ function gits(){
 	git status
 }
 
-# git log 
+# git log
 function gitl(){
 	git log --pretty=format:"%h%x09%an%x09%ad%x09%s" --date=short
 }
@@ -146,4 +146,10 @@ done
 #### adding scripts to path ####################################################
 
 export PATH=$PATH:~/ltools/scripts
+
+
+
+#### simple server ############################################################
+
+alias simpleserve='python -m SimpleHTTPServer 8000'
 
