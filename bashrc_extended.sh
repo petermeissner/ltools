@@ -58,7 +58,8 @@ function reloadbashrc(){
 	source ~/.bashrc
 }
 
-
+# disk size
+alias size='du -sh'
 
 
 #### GIT  ######################################################################
