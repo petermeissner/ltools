@@ -23,7 +23,7 @@ source ~/.git-prompt.bash
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_DESCRIBE_STYLE="describe"
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git_ps1 "(%s)")\[\033[01;34m\] \w \$\[\033[00m\]\r\n'
+export PS1='\[\e[35m\]$HOSTALIAS\[\e[m\] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h \e[33m$(__git_ps1 "(%s)")\[\033[01;34m\] \w \$\[\033[00m\]\r\n'
 
 
 
