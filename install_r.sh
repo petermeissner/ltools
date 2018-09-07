@@ -32,6 +32,7 @@ sudo apt-get install -y libssl-dev
 sudo apt-get install -y libxml2-dev
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
+sudo apt-get install -y libpq-dev
 
 sudo apt-get -y install --no-install-recommends qpdf gfortran
 
@@ -72,10 +73,11 @@ Rscript -e 'install.packages("highr",          repos="https://cloud.r-project.or
 Rscript -e 'install.packages("markdown",       repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("yaml",           repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("htmltools",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("caTools",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("knitr",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("caTools",        repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("knitr",          repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("rmarkdown",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("rdrop2",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("rdrop2",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("RPostgreSQL",    repos="https://cloud.r-project.org/")'
 
 
 
