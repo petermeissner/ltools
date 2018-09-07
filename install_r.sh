@@ -1,4 +1,4 @@
-#!bash
+#!/bin/bash
 
 # helper functions
 function echo_headline(){ echo -e "\033[1;36m$1\033[0m"; }
