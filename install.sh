@@ -185,11 +185,11 @@ git config --global push.default matching
 
 #### mint ######################################################################
 
-sudo apt-get install dconf-editor -y
+#sudo apt-get install dconf-editor -y
 
-gsettings set org.cinnamon.desktop.keybindings.wm toggle-recording ['']
-gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-down ['']
-gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up ['']
+#gsettings set org.cinnamon.desktop.keybindings.wm toggle-recording ['']
+#gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-down ['']
+#gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up ['']
 
 
 
