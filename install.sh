@@ -63,17 +63,38 @@ Rscript -e 'install.packages("wikipediatrend", repos="https://cloud.r-project.or
 Rscript -e 'install.packages("robotstxt",      repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("cranlogs",       repos="https://cloud.r-project.org/")'
 
-Rscript -e 'install.packages("evaluate",       repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("formatR",        repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("highr",          repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("markdown",       repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("yaml",           repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("htmltools",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("evaluate",     repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("formatR",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("highr",        repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("markdown",     repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("yaml",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("htmltools",    repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("caTools",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("knitr",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("rmarkdown",      repos="https://cloud.r-project.org/")'
-Rscript -e 'install.packages("rdrop2",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("knitr",        repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("rmarkdown",    repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("rdrop2",       repos="https://cloud.r-project.org/")'
 
+Rscript -e 'install.packages("hms",          repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("data.table",   repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("DBI",          repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("dbplyr",       repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("digest",       repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("fs",           repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("future",       repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("future.apply", repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("glue",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("httr",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("jsonlite",     repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("knitr",        repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("prettyunits",  repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("R6",           repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("RPostgreSQL",  repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("RSQLite",      repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("rvest",        repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("urltools",     repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("utf8",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("V8",           repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("xml2",         repos="https://cloud.r-project.org/")'
 
 # Rstudio installation
 echo_headline Rstudio download and installation
@@ -111,40 +132,10 @@ sudo apt-get install texlive-fonts-extra -y
 sudo apt-get install imagemagick -y
 
 
-# pgadmin
-# https://wiki.postgresql.org/wiki/Apt
-# http://stackoverflow.com/a/226724/1144966
-while true; do
-    read -p "Do you wish to install postgresql database?" yn
-    case $yn in
-        [Yy]* ) 
-					sudo apt-get install postgresql -y; break;		
-				;;
-        [Nn]* ) 
-					echo "ok, no install ..."; break;
-				;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+# Utilities
+sudo apt-get install nano -y
+sudo apt-get install htop -y
 
-while true; do
-    read -p "Do you wish to install pgadmin for postgresql database administration?" yn
-    case $yn in
-        [Yy]* ) 
-					sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-					sudo apt-get install wget ca-certificates
-					wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-					sudo apt-get update
-					sudo apt-get upgrade
-					sudo apt-get install pgadmin3					
-					break;		
-				;;
-        [Nn]* ) 
-					echo "ok, no install ..."; break;
-				;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 
 
