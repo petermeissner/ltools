@@ -99,9 +99,6 @@ Rscript -e 'install.packages("xml2",         repos="https://cloud.r-project.org/
 # Rstudio installation
 echo_headline Rstudio download and installation
 
-Rscript -e 'library(rvest);html  <- read_html("https://www.rstudio.com/products/rstudio/download/");links <- html_nodes(html, "a") %>% html_attr("href");link  <- grep("amd64.*deb$", links, value=TRUE);download.file(link, "rstudio.deb")'
-
-
 wget -O ~/rstudio.deb "http://www.rstudio.org/download/latest/stable/server/ubuntu64/rstudio-server-latest-amd64.deb"
 sudo apt-get install -y gdebi 
 sudo gdebi rstudio.deb -n
