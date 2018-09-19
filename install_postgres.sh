@@ -12,3 +12,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
 sudo apt update
 sudo apt-get install postgresql-10 -y
 
+# sudo systemctl stop postgresql.service
+# sudo systemctl start postgresql.service
+# sudo systemctl enable postgresql.service
+# sudo systemctl status postgresql.service
