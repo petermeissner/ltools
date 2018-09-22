@@ -95,6 +95,7 @@ Rscript -e 'install.packages("urltools",     repos="https://cloud.r-project.org/
 Rscript -e 'install.packages("utf8",         repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("V8",           repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("xml2",         repos="https://cloud.r-project.org/")'
+Rscript -e 'install.packages("usethis",         repos="https://cloud.r-project.org/")'
 
 # Rstudio installation
 echo_headline Rstudio download and installation
