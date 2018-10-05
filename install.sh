@@ -185,6 +185,11 @@ git config --global push.default matching
 
 
 
+#### python stuff ##############################################################
+
+sudo apt-get install python-pip
+sudo -H pip install pg_activity
+
 
 
 
