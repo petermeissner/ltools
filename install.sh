@@ -6,7 +6,11 @@ function echo_headline(){ echo -e "\033[1;36m$1\033[0m"; }
 # start
 echo_headline start
 
+sudo apt-get install -y apt-transport-https
+sudo apt-get install -y software-properties-common
+
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -s -c)/"
+
 gpg --keyserver pgpkeys.mit.edu --recv-key 51716619E084DAB9
 gpg -a --export 51716619E084DAB9 | sudo apt-key add -
 
