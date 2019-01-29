@@ -10,7 +10,7 @@ fi
 
 #### set up prompt #############################################################
 
-# wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completions.bash"
+# wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/16a465bc018d09e9d7bbbdc5f40a7fb99c21f8ef/contrib/completion/git-completion.bash"
 source ~/.git-completion.bash
 
 
