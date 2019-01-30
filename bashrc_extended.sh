@@ -37,6 +37,10 @@ alias cd..='cd ..'
 alias ll='ls -lh'
 alias lla='ls -lah'
 
+alias untargz='tar -xvzf'
+alias timestamp="date --iso-8601='seconds' | sed -r 's/[:]+/_/g' | sed 's/[T+]/__/g'"
+alias rsync_default='rsync --progress --ignore-existing -vhz'
+
 
 #### terminal convenience ######################################################
 
