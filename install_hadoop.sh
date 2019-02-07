@@ -1,11 +1,66 @@
 #!/bin/bash
 
 # virtualbox vms
+# ----------------------------------------------------------------------------------
+# source: https://www.youtube.com/watch?v=8V4Ez4NUHAk
 # - new ubuntu/linux
-# 
+# - make host only network controller in global options of virtual box 
+#   (http://debuggingcode.com/blogs/windows/14/how-to-assign-static-ip-in-virtual-machine-in-virtualbox)
+# - BEFORE INSTALLATION!: enable two network devices 
+#   (1) NAT
+#   (2) Host-Only-Adapter
 # - ubuntu 18.04 lts server
 # 
 
+
+# static ip for guest systems ubuntu 18.04 / network
+# ----------------------------------------------------------------------------------
+# source: https://www.youtube.com/watch?v=Sg9ij3IAKDE
+# source: https://www.virtualbox.org/manual/ch07.html
+# source: https://websiteforstudents.com/configure-static-ip-addresses-on-ubuntu-18-04-beta/
+# 
+cd /etc/netplan/
+# cp ... .yaml to conf.yaml
+# sudo nano conf.yaml
+#
+# - add following content to file
+# - leave rest as-is
+# - use ip addresses appropriate to what is set in global options of virtualbox host 
+#   only network controller
+#
+## content ##
+# network:
+#   ethernets:
+#     enp0s08:
+#       adresses: [192.168.90.101/24]
+#       gateway4: 192.168.90.1
+#       dhcp4: false
+
+
+# when vm is running
+# - clone it and change the follwoing line in each clusters config.yaml
+#       adresses: [192.168.90.101/24]
+#       adresses: [192.168.90.102/24]
+#       adresses: [192.168.90.103/24]
+# 
+# - rename each host like this 
+# sudo hostnamectl set-hostname cl1
+# sudo hostnamectl set-hostname cl2
+# sudo hostnamectl set-hostname cl3
+# 
+# - edit and add /etc/hosts on all guests 
+#
+# # vm cluster
+# 192.168.90.101 cl1
+# 192.168.90.102 cl2
+# 192.168.90.103 cl3
+
+
+
+
+
+# ubuntu server config
+# ----------------------------------------------------------------------------------
 
 # update
 sudo apt update
