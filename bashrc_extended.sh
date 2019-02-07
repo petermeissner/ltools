@@ -8,16 +8,22 @@ if hash Rscript 2>/dev/null; then
 	fi
 fi
 
+
+
 #### set up prompt #############################################################
 
-# wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completions.bash"
+# git completion
+if [ ! -f ~/git-completion.bash ]; then
+	wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/16a465bc018d09e9d7bbbdc5f40a7fb99c21f8ef/contrib/completion/git-completion.bash"
+fi
 source ~/.git-completion.bash
 
 
-# wget -O ~/.git-prompt.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+# git prompt
+if [ ! -f ~/git-prompt.bash ]; then
+	wget -O ~/.git-prompt.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+fi
 source ~/.git-prompt.bash
-
-
 
 
 GIT_PS1_SHOWCOLORHINTS=true
@@ -29,13 +35,20 @@ export PS1='\[\e[35m\]$HOSTALIAS\[\e[m\] ${debian_chroot:+($debian_chroot)}\[\03
 
 
 
-
 #### aliases ###################################################################
+
 alias R='R --no-save'
 alias cd..='cd ..'
 
 alias ll='ls -lh'
 alias lla='ls -lah'
+
+alias untargz='tar -xvzf'
+alias timestamp="date --iso-8601='seconds' | sed -r 's/[:]+/_/g' | sed 's/[T+]/__/g'"
+alias rsync_default='rsync --progress --ignore-existing -vhz'
+
+
+
 
 
 #### terminal convenience ######################################################
@@ -96,18 +109,6 @@ function gitl(){
 }
 
 
-#### lazy apt ##################################################################
-
-# lazy installation function
-function apt-ins() {
-	sudo apt-get install $1
-}
-
-# lazy apt search function
-function apt-search(){
-	apt-cache search $1
-}
-
 
 
 #### C programming #############################################################
@@ -144,9 +145,14 @@ do
 done
 }
 
+
+
+
 #### adding scripts to path ####################################################
 
 export PATH=$PATH:~/ltools/scripts
+
+
 
 
 

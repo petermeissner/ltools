@@ -33,6 +33,7 @@ sudo apt-get install -y libssl-dev
 sudo apt-get install -y libxml2-dev
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libssl-dev
+sudo apt install -y libv8-dev
 
 sudo apt-get -y install --no-install-recommends qpdf gfortran
 
