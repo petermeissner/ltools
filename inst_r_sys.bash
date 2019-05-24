@@ -30,3 +30,9 @@ sudo apt install -y libcurl4-openssl-dev
 sudo apt install -y libpq-dev
 
 sudo apt -y install --no-install-recommends qpdf gfortran
+
+
+# java 
+sudo apt install -y default-jre
+sudo apt install -y default-jdk
+sudo R CMD javareconf
