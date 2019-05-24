@@ -28,6 +28,7 @@ sudo apt install -y libssl-dev
 sudo apt install -y libv8-dev
 sudo apt install -y libcurl4-openssl-dev
 sudo apt install -y libpq-dev
+sudo apt install -y libxslt1-dev 
 
 sudo apt -y install --no-install-recommends qpdf gfortran
 
