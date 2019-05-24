@@ -79,11 +79,3 @@ Rscript -e 'install.packages("V8",           repos="https://cloud.r-project.org/
 Rscript -e 'install.packages("xml2",         repos="https://cloud.r-project.org/")'
 Rscript -e 'install.packages("usethis",         repos="https://cloud.r-project.org/")'
 
-# Rstudio installation
-echo_headline Rstudio download and installation
-
-wget -O ~/rstudio.deb "http://www.rstudio.org/download/latest/stable/server/ubuntu64/rstudio-server-latest-amd64.deb"
-sudo apt-get install -y gdebi 
-sudo gdebi rstudio.deb -n
-rm rstudio.deb
-
