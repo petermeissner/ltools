@@ -13,14 +13,14 @@ fi
 #### set up prompt #############################################################
 
 # git completion
-if [ ! -f ~/git-completion.bash ]; then
+if [ ! -f ~/.git-completion.bash ]; then
 	wget -O ~/.git-completion.bash "https://raw.githubusercontent.com/git/git/16a465bc018d09e9d7bbbdc5f40a7fb99c21f8ef/contrib/completion/git-completion.bash"
 fi
 source ~/.git-completion.bash
 
 
 # git prompt
-if [ ! -f ~/git-prompt.bash ]; then
+if [ ! -f ~/.git-prompt.bash ]; then
 	wget -O ~/.git-prompt.bash "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
 fi
 source ~/.git-prompt.bash
